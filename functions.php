@@ -182,3 +182,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+/** Testimonial CPTs */
+
+function register_testimonial_post_type() {
+    register_post_type('ast-testimonial', array(
+        'labels' => array(
+            'name'          => __('Testimonials'),
+            'singular_name' => __('Testimonial'),
+        ),
+        'public' => true,
+        'supports' => array('title', 'editor'),
+        // Add more options as needed
+    ));
+}
+add_action('init', 'register_testimonial_post_type');

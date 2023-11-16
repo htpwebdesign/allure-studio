@@ -1,4 +1,4 @@
-<section class="home-slider">
+<section class="testimonial-section">
     <?php
     $args = array(
         'post_type'      => 'ast-testimonial',
@@ -16,7 +16,7 @@
                 ?>
                     <div class="swiper-slide">
                         <blockquote>
-                            <p><?php echo esc_attr($person_name); ?></p>
+                            <p><?php echo esc_html($person_name); ?></p>
                             <cite>- <?php echo esc_html($testimonial); ?></cite>
                         </blockquote>
                     </div>

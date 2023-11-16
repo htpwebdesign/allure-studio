@@ -22,37 +22,38 @@ get_header();
         while (have_posts()) :
             the_post();
 
-            $hero_image = get_field('hero_image');
-            if ($hero_image) : ?>
-                <div class="hero-image-wrapper">
-                    <img src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image['alt']); ?>" />
-                </div>
-            <?php endif;
+          get_template_part( 'template-parts/hero' );
 
-            // About Us section
+            // Meet our team section
             $about_us_image = get_field('about_us_image');
+            $size = 'full'; // (thumbnail, medium, large, full, or custom size)
             if ($about_us_image): ?>
-                <section class="about-us">
-                    <div class="about-us-img">
-                        <img src="<?php echo esc_url($about_us_image['url']); ?>" alt="<?php echo esc_attr($about_us_image['alt']); ?>" />
+                <section class="meet-our-team-section">
+                    <div class="meet-our-team-img-wrapper">
+                         <?php echo wp_get_attachment_image( $about_us_image["id"], $size); ?>
+                       
                     </div>
-                    <h2><?php echo esc_html(get_field('about_us_title')); ?></h2>
-                    <p><?php echo esc_html(get_field('about_us_text')); ?></p>
+                    <h2 class="meet-our-team-title"><?php echo esc_html(get_field('about_us_title')); ?></h2>
+                    <p class="meet-our-team-text"><?php echo esc_html(get_field('about_us_text')); ?></p>
                 </section>
-            <?php endif;
+            <?php endif;?>
 
-           
-            $stylists = get_field('stylists');
+            <section class="stylist-section">
+         <?php  $stylists = get_field('stylists');
+            $size = 'large'; // (thumbnail, medium, large, full, or custom size)
 
             if ($stylists) :
                 foreach ($stylists as $stylist) :
                     // var_dump($stylist["stylist_image"]["url"]);
                     ?>
-                    <div class="stylist-container">
-                        <h2><?php echo esc_html($stylist['stylist_name']); ?></h2>
-                        <p><?php echo esc_html($stylist['stylist_text']); ?></p>
-                        <img src="<?php echo esc_url($stylist["stylist_image"]["url"]); ?>" alt="">
-                    </div>
+                   <div class="stylist">
+                        <h2 class="stylist-name"><?php echo esc_html($stylist['stylist_name']); ?></h2>
+                        <p class="stylist-text"><?php echo esc_html($stylist['stylist_text']); ?></p>
+                       
+                     <div class="stylist-img">   
+                        <?php echo wp_get_attachment_image( $stylist["stylist_image"]["id"], $size); ?>
+                     </div>
+                </div>
                 <?php
                 endforeach;
             else :
@@ -60,9 +61,10 @@ get_header();
                 echo 'No stylists found.';
             endif;
 
-        endwhile;
+        endwhile;?>
+          </section>
 
-        the_posts_navigation();
+    <?php    the_posts_navigation();
 
     else :
 

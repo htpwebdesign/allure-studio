@@ -153,7 +153,7 @@ function allure_studio_scripts() {
 
 		wp_enqueue_script( 'allure-studio-main', get_template_directory_uri() . '/js/main.js', array('allure-studio-swiper'), _S_VERSION, true );
 
-		wp_enqueue_style('allure-studio-swipe', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), array(), false);
+		wp_enqueue_style('allure-studio-swipe', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), _S_VERSION);
 
 
 

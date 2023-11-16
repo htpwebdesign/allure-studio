@@ -12,7 +12,35 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
+		    <?php $social_media_accounts = get_field('social_media', 'option'); ?>
+			<?php $footer_info = get_field('footer_info', 'option'); ?>
+
+		<div class="footer-info">
+			<p> <?php echo $footer_info["address"]; ?></p>
+			<p> <?php echo $footer_info["email"]; ?></p>
+			<p> <?php echo $footer_info["phone_number"]; ?></p>
+			<p> <?php echo $footer_info["info_text"]; ?></p>	
+		</div>		
+			
+	
+		<div class="social-media">
+			<?php if(isset($social_media_accounts["facebook_link"])) : ?>
+				<a href="<?php echo esc_url($social_media_accounts["facebook_link"]); ?>">Facebook Icon</a>
+				
+			<?php endif; ?>
+			<?php if(isset($social_media_accounts["instagram_link"])) : ?>
+				<a href="<?php echo esc_url($social_media_accounts["facebook_link"]); ?>">Instagram Icon</a>
+				
+			<?php endif; ?>
+		</div>
+			
+		
+
+			
+			
+		
+	
+		<div class="footer-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'allure-studio' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
@@ -25,8 +53,11 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'allure-studio' ), 'allure-studio', '<a href="https://allurestudio.bcitwebdeveloper.ca/">FWD 34</a>' );
 				?>
 		</div><!-- .site-info -->
+		
+
+		
 	</footer><!-- #colophon -->
-</div><!-- #page -->
+
 
 <?php wp_footer(); ?>
 

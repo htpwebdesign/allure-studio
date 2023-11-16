@@ -146,6 +146,17 @@ function allure_studio_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+
+
+		wp_enqueue_script( 'allure-studio-swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), _S_VERSION, true );
+
+		wp_enqueue_script( 'allure-studio-main', get_template_directory_uri() . '/js/main.js', array('allure-studio-swiper'), _S_VERSION, true );
+
+		wp_enqueue_style('allure-studio-swipe', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), array(), false);
+
+
+
 }
 add_action( 'wp_enqueue_scripts', 'allure_studio_scripts' );
 

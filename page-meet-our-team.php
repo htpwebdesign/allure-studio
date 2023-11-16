@@ -41,8 +41,8 @@ get_header();
                 </section>
             <?php endif;
 
-            // Assuming the repeater field name is 'stylist' and it is attached to the current page/post
-            $stylists = get_field('stylist');
+           
+            $stylists = get_field('stylists');
 
             if ($stylists) :
                 foreach ($stylists as $stylist) :

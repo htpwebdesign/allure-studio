@@ -10,11 +10,14 @@
     if ($query->have_posts()) : ?>
         <div class="swiper">
             <div class="swiper-wrapper">
-                <?php while ($query->have_posts()) : $query->the_post(); ?>
+                <?php while ($query->have_posts()) : $query->the_post(); 
+                    $testimonial  = get_field('testimonial');
+                    $person_name  = get_field('person_name');
+                ?>
                     <div class="swiper-slide">
                         <blockquote>
-                            <p><?php echo esc_html(get_the_content()); ?></p>
-                            <cite>- <?php echo esc_html(get_post_meta(get_the_ID(), 'customer_name', true)); ?></cite>
+                            <p><?php echo esc_attr($person_name); ?></p>
+                            <cite>- <?php echo esc_html($testimonial); ?></cite>
                         </blockquote>
                     </div>
                 <?php endwhile; ?>

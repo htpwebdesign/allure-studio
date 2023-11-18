@@ -33,12 +33,12 @@ get_header();
 			if ($query->have_posts()) {
 				$photoCount = 0;
 				echo '<div>';
-				echo '<ul class="gallery-list">'; 
+				echo '<ul id="gallery-list" class="gallery-list">'; 
 				while ($query->have_posts()) {
 					$photoCount++;
 					$query->the_post();
 					?>
-							<li class="gallery-thumbnail">
+							<li class="gallery-thumbnail" data-src=<?php the_post_thumbnail_url( ); ?>>
 								<?php the_post_thumbnail('medium'); ?>
 							</li>
 					<?php

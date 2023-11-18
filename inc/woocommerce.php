@@ -249,8 +249,17 @@ function ts_display_short_description_between_title_and_price()
 		}
 	}
 }
-
 add_action('woocommerce_shop_loop_item_title', 'ts_display_short_description_between_title_and_price');
 
 // Remove Read More links from shop page
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+
+// Remove sidebar from single-product page
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
+// remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+// Remove meta data from single-product page
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+// Remove related products from single-product page
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );

@@ -22,7 +22,6 @@ get_header();
 			</header><!-- .page-header -->
 
 			<?php
-			do_shortcode( '[lightgallery id="287"]' );
 			$args = array(
 				'post_type' => 'ast-gallery',
 				'posts_per_page' => -1,

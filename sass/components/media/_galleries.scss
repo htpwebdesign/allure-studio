@@ -21,3 +21,27 @@
 .gallery-caption {
 	display: block;
 }
+
+// lightGallery in Gallery page
+.gallery-list{
+	margin: 0;
+    padding: 0;
+    list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	gap: 1rem;
+
+	& li.gallery-thumbnail{
+		display: inline-block;
+		height: 200px;
+		width: 200px;
+		overflow: hidden;
+
+		& img{
+            object-fit: cover;
+			width: 100%;
+			min-width: 100%;
+        }
+	}
+}

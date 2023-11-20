@@ -22,4 +22,7 @@ const swiper = new Swiper(".swiper", {
 let gallery = document.getElementById("gallery-list");
 lightGallery(gallery, {
   download: false,
+  controls: false,
+  keyPress: false,
+  enableDrag: false
 });

@@ -61,24 +61,15 @@ get_header();
 			<?php
 			$args = array(
 				'post_type' => 'ast-gallery',
-				'posts_per_page' => -1,
-				'tax_query'		=> array(
-					array(
-						'taxonomy' => 'ast-gallery-categories',
-            			'field'    => 'slug',
-            			'terms'    => 'colors'
-					)
-				)
+				'posts_per_page' => -1
 			);
 
 			$query = new WP_Query($args);
 
 			if ($query->have_posts()) {
-				$photoCount = 0;
 				echo '<div>';
 				echo '<ul id="gallery-list" class="gallery-list">'; 
 				while ($query->have_posts()) {
-					$photoCount++;
 					$query->the_post();
 					?>
 							<li class="gallery-thumbnail" data-src=<?php the_post_thumbnail_url( ); ?>>
@@ -89,7 +80,6 @@ get_header();
 				wp_reset_postdata();
 				echo '</ul>';
 				echo '</div>';
-				echo '<p>Photos: ' . $photoCount . '</p>';
 			}
 
 		endif;

@@ -20,7 +20,7 @@
 			<p> <?php echo $footer_info["info_text"]; ?></p>	
 		</div>		
 			<div class="footer-middle">
-			<span>	<?php esc_html_e('Created by ', 'allure-studio'); ?> </span>
+			<span> &copy;	<?php esc_html_e('Created by ', 'allure-studio'); ?> </span>
 				<span><?php esc_html_e('Duygu & Sally & Andrew & Bugra', 'allure-studio'); ?></span>
 
 		   </div>

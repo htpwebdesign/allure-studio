@@ -157,7 +157,7 @@ function allure_studio_scripts()
 	wp_enqueue_style('allure-studio-swipe', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), _S_VERSION);
 	
 	// Enqueue lightGallery script
-	wp_enqueue_script('lightGallery-script', get_template_directory_uri() . '/js/lightGallery/lightgallery.min.js', array(), _S_VERSION, array('strategy' => 'defer'));
+	wp_enqueue_script('lightGallery-script', get_template_directory_uri() . '/js/lightGallery/lightgallery.min.js', array(), _S_VERSION, true);
 	// Enqueue lightGallery CSS file
 	wp_enqueue_style('lightGallery-style', get_template_directory_uri() . '/css/lightgallery-bundle.min.css', array(), _S_VERSION);	
 	

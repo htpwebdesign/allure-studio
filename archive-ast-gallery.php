@@ -56,7 +56,6 @@ get_header();
                         margin-right: 0;
                     }
                 </style>
-				</style>
 			</div>
 
 			<?php

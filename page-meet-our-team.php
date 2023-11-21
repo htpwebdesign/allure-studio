@@ -22,7 +22,7 @@ get_header();
         while (have_posts()) :
             the_post();
 
-          get_template_part( 'template-parts/hero' );
+          get_template_part( 'template-parts/banner' );
 
             // Meet our team section
             $about_us_image = get_field('about_us_image');
@@ -33,7 +33,7 @@ get_header();
                          <?php echo wp_get_attachment_image( $about_us_image["id"], $size); ?>
                        
                     </div>
-                    <h2 class="meet-our-team-title"><?php echo esc_html(get_field('about_us_title')); ?></h2>
+                    <h1 class="meet-our-team-title"><?php echo esc_html(get_field('about_us_title')); ?></h1>
                     <p class="meet-our-team-text"><?php echo esc_html(get_field('about_us_text')); ?></p>
                 </section>
             <?php endif;?>
@@ -46,13 +46,13 @@ get_header();
                 foreach ($stylists as $stylist) :
                     // var_dump($stylist["stylist_image"]["url"]);
                     ?>
-                   <div class="stylist">
+                   <article class="stylist">
                         <h2 class="stylist-name"><?php echo esc_html($stylist['stylist_name']); ?></h2>
                         <p class="stylist-text"><?php echo esc_html($stylist['stylist_text']); ?></p>
                        
                      <div class="stylist-img">   
                         <?php echo wp_get_attachment_image( $stylist["stylist_image"]["id"], $size); ?>
-                     </div>
+                </article>
                 </div>
                 <?php
                 endforeach;

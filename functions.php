@@ -205,6 +205,11 @@ if (class_exists('WooCommerce')) {
  */
 require get_template_directory() . '/inc/cpt-taxonomy.php';
 
+// Brands img size
+if (function_exists('add_image_size')) {
+    add_image_size('custom_brand_logo', 150, 150, true); 
+}
+
 // Remove "Archives" prefix from archive titles
 add_filter('get_the_archive_title', function ($title) {
 	if (is_post_type_archive()) {

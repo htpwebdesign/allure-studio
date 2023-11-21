@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.container {
+  max-width: 75rem;
+  width: 100%;
+  margin: 5rem auto;
+}
+
+//// Hero Section
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+  margin-bottom: 10rem;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: black;
+    z-index: 2;
+    opacity: 0.4;
+  }
+  &-title {
+    font-size: 3rem;
+  }
+  &-img-wrapper {
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+  }
+  &-text {
+    position: absolute;
+    left: 3rem;
+    position: absolute;
+    bottom: 5rem;
+    text-align: center;
+    color: white;
+    z-index: 5;
+  }
+}
+
+.hero-img-wrapper img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 95vh;
+  object-fit: fill;
+  object-position: bottom;
+}
+
+.button {
+  padding: 16px 35px;
+  text-decoration: none;
+  background-color: #809b9f;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white !important;
+  display: inline-block;
+  line-height: 1;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0px;
+}
+
+///////Brands Section
+.brands-section {
+  margin-bottom: 5rem;
+
+  &-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: rgb(47, 46, 46);
+    margin-bottom: 2rem;
+  }
+
+  &-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &-item {
+    list-style: none;
+  }
+}
+
+///////Testimonials Section
+.testimonial {
+  margin: 3rem 0;
+  padding: 3rem 0 5rem 0;
+  background-color: #809b9f69;
+
+  &-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2f2e2e;
+    margin-bottom: 3rem;
+  }
+}
+
+.testimonial ::after {
+  color: black;
+}
+
+.testimonial .swiper-pagination-bullet {
+  background-color: black;
+}
+
+.testimonial blockquote {
+  padding: 3rem;
+  background-color: #fafafa;
+  margin: 0 8rem;
+}
+
+.swiper-wrapper {
+  margin-bottom: 2rem;
+}
+
+.person-name {
+  font-weight: 700;
+}
+cite {
+  font-style: italic;
+}

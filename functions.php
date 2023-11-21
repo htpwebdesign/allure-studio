@@ -198,3 +198,8 @@ if ( class_exists( 'WooCommerce' ) ) {
  * Register CPTs and Taxonomies
  */
 require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+
+if (function_exists('add_image_size')) {
+    add_image_size('custom_brand_logo', 150, 150, true); 
+}

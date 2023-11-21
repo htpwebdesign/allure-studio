@@ -22,24 +22,31 @@ get_header();
 			</header><!-- .page-header -->
 
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			$args = array(
+				'post_type' => 'ast-gallery',
+				'posts_per_page' => -1,
+			);
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+			$query = new WP_Query($args);
 
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
+			if ($query->have_posts()) {
+				$photoCount = 0;
+				echo '<div>';
+				echo '<ul id="gallery-list" class="gallery-list">'; 
+				while ($query->have_posts()) {
+					$photoCount++;
+					$query->the_post();
+					?>
+							<li class="gallery-thumbnail" data-src=<?php the_post_thumbnail_url( ); ?>>
+								<?php the_post_thumbnail('medium'); ?>
+							</li>
+					<?php
+				}
+				wp_reset_postdata();
+				echo '</ul>';
+				echo '</div>';
+				echo '<p>Photos: ' . $photoCount . '</p>';
+			}
 
 		endif;
 		?>
@@ -47,5 +54,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

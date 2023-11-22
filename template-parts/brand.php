@@ -1,4 +1,4 @@
-<section class="brands-section">
+<section id="brand" class="brands-section">
     <?php 
     // Check if the function get_field exists
     if (function_exists('get_field')) {

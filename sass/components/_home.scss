@@ -4,19 +4,22 @@
   box-sizing: border-box;
   overflow-x: hidden;
 }
+
 .container {
   max-width: 75rem;
   width: 100%;
   margin: 5rem auto;
+  padding: 0 1.5rem;
 }
 
-//// Hero Section
+/* Hero Section */
 .hero-section {
-  position: relative;
-  width: 100vw;
+  max-width: 100vw;
+  width: 100%;
   height: 90vh;
   overflow: hidden;
-  margin-bottom: 10rem;
+  margin-bottom: 2rem;
+  position: relative;
 
   &::after {
     content: "";
@@ -30,22 +33,45 @@
     z-index: 2;
     opacity: 0.4;
   }
-  &-title {
-    font-size: 3rem;
-  }
-  &-img-wrapper {
-    padding-bottom: 75%;
-    height: 0;
-    overflow: hidden;
-  }
   &-text {
     position: absolute;
-    left: 3rem;
-    position: absolute;
-    bottom: 5rem;
-    text-align: center;
-    color: white;
+    left: 1rem;
+    bottom: 4rem;
+    text-align: left;
     z-index: 5;
+  }
+
+  &-title {
+    font-size: 1.9rem;
+    font-weight: 500;
+    line-height: 50px;
+    color: white;
+    font-family: $font__main;
+    margin-bottom: 0;
+  }
+
+  &-desc {
+    font-size: 1rem;
+    font-weight: 300;
+    width: 70%;
+    color: #ffffffbd;
+  }
+
+  &-img-wrapper {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 56.2%;
+    height: 90vh;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%; /* Adjusted to maintain aspect ratio */
+      object-fit: cover; /* Ensures the image covers the entire container */
+      object-position: bottom;
+    }
   }
 }
 
@@ -54,43 +80,131 @@
   left: 0;
   top: 0;
   width: 100%;
-  height: 95vh;
-  object-fit: fill;
+  height: 100%; /* Adjusted to maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the entire container */
   object-position: bottom;
 }
 
 .button {
-  padding: 16px 35px;
+  padding: 10px 20px;
   text-decoration: none;
-  background-color: #809b9f;
-  border-radius: 10px;
+  background-color: #154747;
+  font-weight: 500;
   outline: none;
   cursor: pointer;
   text-transform: uppercase;
-  color: white !important;
+  color: #fff;
   display: inline-block;
   line-height: 1;
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0px;
+  letter-spacing: 0.02em;
+  line-height: 20px;
 }
 
-///////Brands Section
-.brands-section {
-  margin-bottom: 5rem;
+.arrows {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  bottom: 20px;
+  cursor: pointer;
+}
 
+.arrows path {
+  stroke: #ffffff;
+  fill: transparent;
+  stroke-width: 3px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 3s infinite;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+.arrows path.a1 {
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s;
+}
+
+@media (min-width: 524px) {
+  .container {
+    padding: 0 5rem;
+  }
+  .hero-section {
+    margin-bottom: 10rem;
+
+    &-title {
+      font-size: 2.5rem;
+      line-height: 78px;
+      margin-bottom: 1.5rem;
+    }
+
+    &-desc {
+      font-size: 0.8rem;
+    }
+
+    &-text {
+      left: 3rem;
+      bottom: 5rem;
+    }
+  }
+
+  .button {
+    padding: 16px 35px;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+}
+
+/* Add more media queries for smaller screens if needed */
+
+/* Brands Section */
+.brands-section {
+  margin-bottom: 3rem;
   &-title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align: center;
-    color: rgb(47, 46, 46);
-    margin-bottom: 2rem;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
   }
 
   &-menu {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row: auto;
     gap: 1rem;
+    align-items: center;
+    justify-items: center;
   }
 
   &-item {
@@ -98,17 +212,43 @@
   }
 }
 
-///////Testimonials Section
+@media (min-width: 524px) {
+  .brands-section {
+    margin-bottom: 5rem;
+
+    &-title {
+      font-size: 2.5rem;
+      margin-bottom: 5rem;
+    }
+
+    &-menu {
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &-item {
+      list-style: none;
+    }
+  }
+}
+
+/* Instagram Section */
+.instagram-section {
+  margin-bottom: 10rem;
+}
+
+/* Testimonials Section */
 .testimonial {
   margin: 3rem 0;
-  padding: 3rem 0 5rem 0;
-  background-color: #809b9f69;
+  padding-top: 1rem;
+  background-color: #15474768;
 
   &-title {
     text-align: center;
-    font-size: 2.5rem;
-    color: #2f2e2e;
-    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
   }
 }
 
@@ -121,18 +261,46 @@
 }
 
 .testimonial blockquote {
-  padding: 3rem;
+  padding: 2rem 3rem;
   background-color: #fafafa;
-  margin: 0 8rem;
-}
-
-.swiper-wrapper {
-  margin-bottom: 2rem;
+  margin: 0 1rem;
 }
 
 .person-name {
   font-weight: 700;
 }
+
 cite {
   font-style: italic;
+}
+
+@media (min-width: 524px) {
+  .testimonial {
+    margin: 3rem 0;
+    padding: 3rem 0 5rem 0;
+    background-color: #15474768;
+
+    &-title {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .testimonial ::after {
+    color: black;
+  }
+
+  .testimonial .swiper-pagination-bullet {
+    background-color: black;
+  }
+
+  .testimonial blockquote {
+    padding: 3rem;
+    background-color: #fafafa;
+    margin: 0 8rem;
+  }
+
+  .swiper-wrapper {
+    margin-bottom: 2rem;
+  }
 }

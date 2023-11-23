@@ -33,10 +33,11 @@ get_header();
 				 */
 		
                 get_template_part( 'template-parts/hero' );
+				get_template_part( 'template-parts/brand' );
 				?>
                 <div class="container">
 					<?php
-					get_template_part( 'template-parts/brand' );
+					
 					get_template_part( 'template-parts/instagram-feed' );
 					get_template_part( 'template-parts/testimonials' );
 					?>

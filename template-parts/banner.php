@@ -1,5 +1,5 @@
-<section class="hero-section">
-    <div class="banner-wrapper">
+<section class="banner">
+    <div class="banner-img-wrapper">
         <?php 
             // Check if the function get_field exists
             if (function_exists('get_field')) {
@@ -12,12 +12,14 @@
             }
         ?>
     </div>
-    <div class="banner-title">
-        <h1><?php echo esc_html(get_field('banner_title')); ?></h1>
-        <?php 
-            $link = get_field('link');
-            if( $link ): ?>
-                <a class="button" href="<?php echo esc_url( $link ); ?>">Book Now</a>
-            <?php endif; ?>
+    <div class="banner-text-container">
+        <h1 class="banner-title"><?php echo esc_html(get_field('banner_title')); ?></h1>
     </div>
+     <div class="scroll-to-bottom">
+		<a href="#about-us">
+            <svg class="arrows">
+							<path stroke-linecap="round" class="a1" d="M0 0 L20 22 L40 0"></path>
+						</svg>
+        </a>
+	  </div>
 </section>

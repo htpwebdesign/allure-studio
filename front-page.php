@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="">
     
 
 		<?php
@@ -33,10 +33,16 @@ get_header();
 				 */
 		
                 get_template_part( 'template-parts/hero' );
-                get_template_part( 'template-parts/brand' );
-                get_template_part( 'template-parts/instagram-feed' );
-                get_template_part( 'template-parts/testimonials' );
-                
+				get_template_part( 'template-parts/brand' );
+				?>
+                <div class="container">
+					<?php
+					
+					get_template_part( 'template-parts/instagram-feed' );
+					get_template_part( 'template-parts/testimonials' );
+					?>
+				</div>
+             <?php   
 
 			endwhile;
 

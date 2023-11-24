@@ -1,23 +1,46 @@
 .gallery {
-	margin-bottom: 1.5em;
-	display: grid;
-	grid-gap: 1.5em;
+    margin-bottom: 1.5em;
+    display: grid;
+    grid-gap: 1.5em;
 }
 
 .gallery-item {
-	display: inline-block;
-	text-align: center;
-	width: 100%;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
 }
 
 // Loops to enumerate the classes for gallery columns.
 @for $i from 2 through 9 {
-
-	.gallery-columns-#{$i} {
-		grid-template-columns: repeat($i, 1fr);
-	}
+    .gallery-columns-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+    }
 }
 
 .gallery-caption {
-	display: block;
+    display: block;
+}
+
+// lightGallery in Gallery page
+.gallery-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 1rem;
+
+    & li.gallery-thumbnail {
+        display: inline-block;
+        height: 200px;
+        width: 200px;
+        overflow: hidden;
+
+        & img {
+            object-fit: cover;
+            width: 100%;
+            min-width: 100%;
+        }
+    }
 }

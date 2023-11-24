@@ -142,7 +142,8 @@ add_action('widgets_init', 'allure_studio_widgets_init');
  */
 function allure_studio_scripts()
 {
-	wp_enqueue_style('allure-studio-style', get_stylesheet_uri(), array(), _S_VERSION);
+
+	wp_enqueue_style('allure-studio-style', get_stylesheet_uri(), array(), filemtime(get_theme_file_path('/style.css')));
 	wp_style_add_data('allure-studio-style', 'rtl', 'replace');
 
 	wp_enqueue_script('allure-studio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
@@ -151,19 +152,18 @@ function allure_studio_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 
-
-
+	// Enqueue Swiper script
 	wp_enqueue_script('allure-studio-swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), _S_VERSION, true);
-
-	wp_enqueue_script('allure-studio-main', get_template_directory_uri() . '/js/main.js', array('allure-studio-swiper'), _S_VERSION, true);
-
-	wp_enqueue_style('allure-studio-swipe', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), _S_VERSION);
-
+	// Enqueue Swiper CSS file
+	wp_enqueue_style('allure-studio-swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), _S_VERSION);
+	
 	// Enqueue lightGallery script
-	wp_enqueue_script('lightGallery-script', get_template_directory_uri() . '/js/lightGallery/lightgallery.min.js', array(), _S_VERSION, array('strategy' => 'defer'));
+	wp_enqueue_script('lightGallery-script', get_template_directory_uri() . '/js/lightGallery/lightgallery.min.js', array(), _S_VERSION, true);
 	// Enqueue lightGallery CSS file
 	wp_enqueue_style('lightGallery-style', get_template_directory_uri() . '/css/lightgallery-bundle.min.css', array(), _S_VERSION);	
-
+	
+	// Enqueue our own script
+	wp_enqueue_script('allure-studio-main', get_template_directory_uri() . '/js/main.js', array('allure-studio-swiper'), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'allure_studio_scripts');
 
@@ -205,6 +205,11 @@ if (class_exists('WooCommerce')) {
  * Register CPTs and Taxonomies
  */
 require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+// Brands img size
+if (function_exists('add_image_size')) {
+    add_image_size('custom_brand_logo', 150, 150, true); 
+}
 
 // Remove "Archives" prefix from archive titles
 add_filter('get_the_archive_title', function ($title) {

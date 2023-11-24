@@ -22,7 +22,6 @@ get_header();
 			</header><!-- .page-header -->
 
 			<?php
-			do_shortcode( '[lightgallery id="287"]' );
 			$args = array(
 				'post_type' => 'ast-gallery',
 				'posts_per_page' => -1,
@@ -33,12 +32,12 @@ get_header();
 			if ($query->have_posts()) {
 				$photoCount = 0;
 				echo '<div>';
-				echo '<ul class="gallery-list">'; 
+				echo '<ul id="gallery-list" class="gallery-list">'; 
 				while ($query->have_posts()) {
 					$photoCount++;
 					$query->the_post();
 					?>
-							<li class="gallery-thumbnail">
+							<li class="gallery-thumbnail" data-src=<?php the_post_thumbnail_url( ); ?>>
 								<?php the_post_thumbnail('medium'); ?>
 							</li>
 					<?php

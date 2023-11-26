@@ -153,8 +153,14 @@
   .container {
     padding: 0 5rem;
   }
+  * {
+    overflow-x: visible;
+  }
   .hero-section {
     margin-bottom: 2rem;
+    width: 100vw;
+    z-index: 999;
+    left: -4rem;
 
     &-title {
       font-size: 2.5rem;

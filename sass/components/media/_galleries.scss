@@ -21,8 +21,10 @@
     display: block;
 }
 
+// Thumbnail gallery
 .gallery-filter_list {
-    margin: 0;
+    width: fit-content;
+    margin: 0 auto;
     padding: 1rem;
     list-style: none;
     @include grid(2);

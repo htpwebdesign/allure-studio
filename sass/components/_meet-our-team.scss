@@ -146,22 +146,22 @@
       }
     }
     &-text-container {
-      padding: 0.5rem;
+      padding: 2rem;
       .stylist-name {
-        color: #fff;
+        color: #000000c2;
         font-size: 24px;
         line-height: 35px;
         font-weight: 500;
         padding-bottom: 1rem;
       }
       .stylist-speciality {
-        color: #fff;
-        font-size: 17px;
+        color: #000000c2;
+        font-size: 12px;
         line-height: 35px;
         font-weight: 300;
       }
       .stylist-text {
-        color: #fff;
+        color: #000000c2;
         font-size: 1rem;
         line-height: 29px;
         font-weight: 400;
@@ -195,7 +195,8 @@
     flex-direction: row;
     margin-bottom: 3rem;
     .stylist {
-      &-name {
+      &-text-container {
+        padding: 2rem;
       }
     }
   }

@@ -28,9 +28,11 @@
         }
 
         form {
-            width: 60%;
-            max-width: 900px;
-            margin: 0 auto;
+            @media (min-width: $breakpoint_small) {
+                width: 70%;
+                max-width: 900px;
+                margin: 0 auto;
+            }
         }
 
         .cancellation-policy p {

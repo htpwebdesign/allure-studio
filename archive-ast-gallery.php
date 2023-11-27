@@ -40,22 +40,6 @@ get_header();
 						<li><?php echo esc_html( $term->name );?></li>
 					<?php endforeach;?>
 				</ul>
-				<style>
-					.gallery-filter_list li {
-                        list-style: none;
-                        display: inline-block;
-                        margin-right: 10px;
-						border: 1px solid #ccc;
-						border-radius: 4px;
-						padding: 0 1rem;
-						width: 120px;
-						text-align: center;
-						cursor: pointer;
-                    }
-                    .gallery-filter_list li:last-child {
-                        margin-right: 0;
-                    }
-                </style>
 			</div>
 
 			<?php

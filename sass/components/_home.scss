@@ -221,7 +221,7 @@ $animationSpeed: 10s;
 // Styling
 .slider {
   background: white;
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  box-shadow: $medium-black_shadow;
   height: 100px;
   margin: auto;
   overflow: hidden;

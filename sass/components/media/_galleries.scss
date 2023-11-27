@@ -21,21 +21,69 @@
     display: block;
 }
 
+.gallery-filter_list {
+    margin: 0;
+    padding: 1rem;
+    list-style: none;
+    @include grid(2);
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+
+    @media (min-width: $breakpoint_small) {
+        @include grid(3);
+    }
+    @media (min-width: $breakpoint_medium) {
+        @include grid(4);
+    }
+    @media (min-width: $breakpoint_large) {
+        @include grid(7);
+    }
+
+    li {
+        display: inline-block;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        padding: 0 1rem;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+
+        :last-child {
+            margin-right: 0;
+        }
+    }
+}
+
 // lightGallery in Gallery page
 .gallery-list {
-    margin: 0;
+    width: fit-content;
+    margin: 0 auto;
     padding: 0;
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    gap: 1rem;
+    @include grid(2, 200px);
+    justify-items: center;
+    align-items: center;
+    gap: 1.3rem;
+
+    @media (min-width: $breakpoint_small) {
+        @include grid(3, 200px);
+    }
+    @media (min-width: $breakpoint_medium) {
+        @include grid(4, 200px);
+    }
+    @media (min-width: $breakpoint_large) {
+        @include grid(7, 200px);
+    }
 
     & li.gallery-thumbnail {
         display: inline-block;
-        height: 200px;
-        width: 200px;
+        width: 100%;
+        aspect-ratio: 1/1;
         overflow: hidden;
+        border-radius: 2px;
+        box-shadow: $thumbnail-black_shadow;
 
         & img {
             object-fit: cover;

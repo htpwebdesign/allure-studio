@@ -23,4 +23,39 @@
       }
     }
   }
+  @media (min-width: $breakpoint_medium) {
+    ul {
+      li {
+        margin: 2rem 1%;
+
+        a {
+          display: grid;
+          grid-template-columns: 150px 1fr;
+          grid-template-rows: repeat(3, min-content);
+          justify-content: flex-start;
+          text-align: left;
+          align-items:center;
+          gap: 1rem;
+          row-gap: 0;
+          img{
+            margin:0%;
+            grid-column: 1/2;
+            grid-row: 1/4;
+          }
+          h2, div, span {
+            grid-column: 2/3;
+          }
+          h2 {
+            grid-row: 1/2;
+          }
+          div {
+            grid-row: 3/4;
+          }
+          span {
+            grid-row: 2/3;
+          }
+        }
+      }
+    }
+  }
 }

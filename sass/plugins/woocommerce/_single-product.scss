@@ -1,3 +1,14 @@
+.woocommerce-breadcrumb {
+    a {
+        margin: 0 0.3rem;
+        text-decoration: none;
+    }
+    span {
+        font-weight: 500;
+        margin-left: 0.3rem;
+    }
+}
+
 .single-product {
     div.product {
         position: relative;
@@ -9,6 +20,17 @@
 
         p {
             max-width: 650px;
+        }
+
+        p.price {
+            width: fit-content;
+            margin: 0 auto 1rem;
+        }
+
+        form {
+            width: 60%;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .cancellation-policy p {

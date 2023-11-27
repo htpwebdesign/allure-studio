@@ -142,7 +142,8 @@ add_action('widgets_init', 'allure_studio_widgets_init');
  */
 function allure_studio_scripts()
 {
-	wp_enqueue_style('allure-studio-style', get_stylesheet_uri(), array(), _S_VERSION);
+
+	wp_enqueue_style('allure-studio-style', get_stylesheet_uri(), array(), filemtime(get_theme_file_path('/style.css')));
 	wp_style_add_data('allure-studio-style', 'rtl', 'replace');
 
 	wp_enqueue_script('allure-studio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
@@ -204,6 +205,11 @@ if (class_exists('WooCommerce')) {
  * Register CPTs and Taxonomies
  */
 require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+// Brands img size
+if (function_exists('add_image_size')) {
+    add_image_size('custom_brand_logo', 150, 150, true); 
+}
 
 // Remove "Archives" prefix from archive titles
 add_filter('get_the_archive_title', function ($title) {

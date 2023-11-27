@@ -1,109 +1,150 @@
 .main-navigation {
-	display: block;
-	width: 100%;
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    max-height: 10vh;
 
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        position: absolute;
+        z-index: 999;
+        left: 0;
+        right: 0;
+        top: 0;
+        text-align: center;
+        background-color: #fff;
+        list-style: none;
+        margin: 0;
+        overflow: hidden;
+        height: 0;
+        transition: height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        opacity: 0;
 
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
+        // For submenus
+        ul {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+            float: left;
+            position: absolute;
+            top: 100%;
+            left: -999em;
+            z-index: 99999;
 
-			ul {
-				left: -999em;
-				top: 0;
-			}
+            ul {
+                left: -999em;
+                top: 0;
+            }
 
-			li {
+            li {
+                &:hover > ul,
+                &.focus > ul {
+                    display: block;
+                    left: auto;
+                }
+            }
 
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
-				}
-			}
+            a {
+                width: 200px;
+            }
 
-			a {
-				width: 200px;
-			}
+            :hover > a,
+            .focus > a {
+            }
 
-			:hover > a,
-			.focus > a {
-			}
+            a:hover,
+            a.focus {
+            }
+        }
 
-			a:hover,
-			a.focus {
-			}
-		}
+        li:hover > ul,
+        li.focus > ul {
+            left: auto;
+        }
+    }
 
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
-	}
+    li {
+        position: relative;
 
-	li {
-		position: relative;
+        &:hover > a,
+        &.focus > a {
+        }
+    }
 
-		&:hover > a,
-		&.focus > a {
-		}
-	}
+    a {
+        display: block;
+        text-decoration: none;
+    }
 
-	a {
-		display: block;
-		text-decoration: none;
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
+    .current_page_item > a,
+    .current-menu-item > a,
+    .current_page_ancestor > a,
+    .current-menu-ancestor > a {
+    }
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+/* Hamburger menu button */
+.menu-toggle {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    margin: 1rem 0;
+    padding: 1rem;
+}
+// Pop up navigation
+.main-navigation.toggled {
+    ul {
+        height: 100%;
+        opacity: 1;
+    }
 }
 
-@media screen and (min-width: 37.5em) {
+// Nav display above breakpoint small
+@media screen and (min-width: $breakpoint_small) {
+    .menu-toggle {
+        display: none;
+    }
 
-	.menu-toggle {
-		display: none;
-	}
+    .main-navigation {
+        display: block;
+        margin-bottom: 2rem;
 
-	.main-navigation ul {
-		display: flex;
-	}
+        ul {
+            display: flex;
+            position: relative;
+            height: auto;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            gap: 0;
+
+            li {
+                width: 20%;
+            }
+        }
+    }
 }
 
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
+    .site-main & {
+        margin: 0 0 1.5em;
+    }
 
-	.site-main & {
-		margin: 0 0 1.5em;
-	}
+    .nav-links {
+        display: flex;
+    }
 
-	.nav-links {
-		display: flex;
-	}
+    .nav-previous {
+        flex: 1 0 50%;
+    }
 
-	.nav-previous {
-		flex: 1 0 50%;
-	}
-
-	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
-	}
+    .nav-next {
+        text-align: end;
+        flex: 1 0 50%;
+    }
 }

@@ -109,7 +109,7 @@
 
     .main-navigation {
         display: block;
-        margin-bottom: 2rem;
+        margin: 1rem auto;
 
         ul {
             display: flex;
@@ -120,6 +120,7 @@
             align-items: center;
             padding: 0;
             gap: 0;
+            opacity: 1;
 
             li {
                 width: 20%;

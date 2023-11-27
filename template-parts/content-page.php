@@ -28,38 +28,47 @@
 		);
 		?>
 		<?php
-		if (is_page( 102 )):
-	$monday = get_field('monday');
-	$tuesday = get_field('tuesday');
-	$wednesday = get_field('wednesday');
-	$thursday = get_field('thursday');
-	$friday = get_field('friday');
-	$saturday = get_field('saturday');
-	$sunday = get_field('sunday');
+if (is_page(102)):
+    $monday = get_field('monday');
+    $tuesday = get_field('tuesday');
+    $wednesday = get_field('wednesday');
+    $thursday = get_field('thursday');
+    $friday = get_field('friday');
+    $saturday = get_field('saturday');
+    $sunday = get_field('sunday');
+    ?>
 
-	if ($monday) {
-			echo '<p>Monday: ' . esc_html($monday) . '</p>';
-	}
-	if ($tuesday) {
-			echo '<p>Tuesday: ' . esc_html($tuesday) . '</p>';
-	}
-	if ($wednesday) {
-			echo '<p>Wednesday: ' . esc_html($wednesday) . '</p>';
-	}
-	if ($thursday) {
-			echo '<p>Thursday: ' . esc_html($thursday) . '</p>';
-	}
-	if ($friday) {
-			echo '<p>Friday: ' . esc_html($friday) . '</p>';
-	}
-	if ($saturday) {
-			echo '<p>Saturday: ' . esc_html($saturday) . '</p>';
-	}
-	if ($sunday) {
-			echo '<p>Sunday: ' . esc_html($sunday) . '</p>';
-	}
- endif;
-	?>
+    <div class="office-hours">
+        <?php if ($monday): ?>
+            <p class="day">Monday: <span class="hours"><?php echo esc_html($monday); ?></span></p>
+        <?php endif; ?>
+
+        <?php if ($tuesday): ?>
+            <p class="day">Tuesday: <span class="hours"><?php echo esc_html($tuesday); ?></span></p>
+        <?php endif; ?>
+
+        <?php if ($wednesday): ?>
+            <p class="day">Wednesday: <span class="hours"><?php echo esc_html($wednesday); ?></span></p>
+        <?php endif; ?>
+
+        <?php if ($thursday): ?>
+            <p class="day">Thursday: <span class="hours"><?php echo esc_html($thursday); ?></span></p>
+        <?php endif; ?>
+
+        <?php if ($friday): ?>
+            <p class="day">Friday: <span class="hours"><?php echo esc_html($friday); ?></span></p>
+        <?php endif; ?>
+
+        <?php if ($saturday): ?>
+            <p class="day">Saturday: <span class="hours"><?php echo esc_html($saturday); ?></span></p>
+        <?php endif; ?>
+
+        <?php if ($sunday): ?>
+            <p class="day">Sunday: <span class="hours"><?php echo esc_html($sunday); ?></span></p>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
+
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>

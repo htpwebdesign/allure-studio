@@ -20,7 +20,7 @@ ul.products {
 @media screen and (min-width: 48em) {
   ul.products {
     li.product {
-      // @include column-width(3);
+    //   @include column-width(3);
       float: left;
       margin-right: $columns__margin;
 

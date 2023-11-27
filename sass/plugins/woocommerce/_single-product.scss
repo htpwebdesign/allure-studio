@@ -3,6 +3,19 @@
         position: relative;
         margin: 2rem auto;
 
+        h2 {
+            margin-bottom: 1em;
+        }
+
+        p {
+            max-width: 650px;
+        }
+
+        .cancellation-policy p {
+            max-width: 900px;
+            line-height: 1.8;
+        }
+
         .woocommerce-product-gallery {
             position: relative;
 
@@ -25,12 +38,12 @@
                         margin: 0 auto;
                         border-radius: 4px;
 
-                        @media (min-width: $breakpoint_small){
-                          width: 65%;
-                          object-position: 50% 60%;
+                        @media (min-width: $breakpoint_small) {
+                            width: 65%;
+                            object-position: 50% 60%;
                         }
-                        @media (min-width: $breakpoint_medium){
-                          object-position: 50% 70%;
+                        @media (min-width: $breakpoint_medium) {
+                            object-position: 50% 70%;
                         }
                     }
                 }

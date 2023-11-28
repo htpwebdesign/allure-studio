@@ -31,7 +31,7 @@ div.site {
     margin-bottom: 2rem;
     width: 100vw;
     z-index: 999;
-    left: -4rem;
+    left: 0;
 
     &-title {
       font-size: 2.5rem;
@@ -66,7 +66,7 @@ div.site {
   }
   &-text {
     position: absolute;
-    left: 10%;
+    left: 5%;
     bottom: 4rem;
     text-align: left;
     z-index: 5;

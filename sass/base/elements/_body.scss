@@ -5,9 +5,11 @@ body {
 }
 
 div.site {
+    // Tablet
     @media (min-width: $breakpoint_small) {
         padding: 0 4rem;
     }
+    // Desktop
     @media (min-width: $breakpoint_medium) {
         padding: 0 8rem;
     }

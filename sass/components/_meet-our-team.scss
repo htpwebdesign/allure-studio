@@ -1,11 +1,18 @@
 //// Banner Section
 .banner {
   max-width: 100vw;
-  width: 100%;
+  width: 100vw;
   height: 70vh;
   overflow: hidden;
   position: relative;
   margin-bottom: 5rem;
+
+  @media (min-width:$breakpoint_small){
+    left: -4rem;
+  }
+  @media (min-width:$breakpoint_medium){
+    left: -8rem;
+  }
 
   &::after {
     content: "";
@@ -52,15 +59,6 @@
       height: 100%; /* Adjusted to maintain aspect ratio */
       object-fit: cover; /* Ensures the image covers the entire container */
       object-position: bottom;
-    }
-  }
-}
-
-@media (min-width: 524px) {
-  .banner {
-    &-title {
-      font-size: 2.5rem;
-      line-height: 78px;
     }
   }
 }

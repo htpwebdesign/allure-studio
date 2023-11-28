@@ -142,6 +142,8 @@ add_action('widgets_init', 'allure_studio_widgets_init');
  */
 function allure_studio_scripts()
 {
+	// Enqueue Poppins
+	wp_enqueue_style('allure-studio-poppins', "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap", array(), null);
 
 	wp_enqueue_style('allure-studio-style', get_stylesheet_uri(), array(), filemtime(get_theme_file_path('/style.css')));
 	wp_style_add_data('allure-studio-style', 'rtl', 'replace');

@@ -5,12 +5,17 @@
   overflow-x: hidden;
 }
 
-
 .container {
   max-width: 65rem;
   width: 100%;
   margin: 5rem auto;
   padding: 0 1.5rem;
+}
+
+div.site {
+  @media (max-width: $breakpoint_small) {
+    margin-top: 10vh;
+  }
 }
 
 /* Hero Section */
@@ -21,7 +26,6 @@
   // overflow-x: visible;
   margin-bottom: 2rem;
   position: relative;
-  left: -1rem;
 
   @media (min-width: $breakpoint_small) {
     margin-bottom: 2rem;
@@ -195,7 +199,6 @@
   margin-bottom: 2rem;
   width: 100vw;
   position: relative;
-  left: -1rem;
 
   @media (min-width: $breakpoint_small) {
     left: -4rem;

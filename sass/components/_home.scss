@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow-x: visible;
 }
 
 .container {
@@ -21,17 +21,18 @@ div.site {
 /* Hero Section */
 .hero-section {
   max-width: 100vw;
-  width: 100%;
+  width: 100vw;
   height: 90vh;
-  overflow: hidden;
+  overflow-x: visible;
   margin-bottom: 2rem;
   position: relative;
+  left: -1rem;
 
   @media (min-width: $breakpoint_small) {
     margin-bottom: 2rem;
     width: 100vw;
     z-index: 999;
-    left: 0;
+    left: -4rem;
 
     &-title {
       font-size: 2.5rem;
@@ -49,14 +50,14 @@ div.site {
     }
   }
   @media (min-width: $breakpoint_medium) {
-    left: 0rem;
+    left: -8rem;
   }
 
   &::after {
     content: "";
     display: block;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     left: 0;
     top: 0;
@@ -180,7 +181,7 @@ div.site {
   -webkit-animation-delay: -0.5s;
 }
 
-@media (min-width: 524px) {
+@media (min-width: $breakpoint_small) {
   .container {
     padding: 0 5rem;
   }

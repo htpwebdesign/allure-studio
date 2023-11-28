@@ -1,0 +1,5 @@
+div.site {
+    @media (max-width: $breakpoint_small) {
+      margin-top: 10vh;
+    }
+  }

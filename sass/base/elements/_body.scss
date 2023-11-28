@@ -1,14 +1,4 @@
-@import "../../abstracts/variables/structure";
-
 body {
-  background: $color__background-body; // Fallback for when there is no custom background color defined.
-  overflow-x: hidden;
-  padding: 0 1rem;
-
-  @media (min-width: $breakpoint_small) {
-    padding: 0 4rem;
-}
-@media (min-width: $breakpoint_medium) {
-    padding: 0 8rem;
-}
+    background: $color__background-body; // Fallback for when there is no custom background color defined.
+    overflow-x: hidden;
 }

@@ -1,14 +1,15 @@
 a {
-	color: $color__link;
+	color: black;
+	text-transform: uppercase;
 
 	&:visited {
-		color: $color__link-visited;
+		color: black;
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color__link-hover;
+		color: $light-orange;
 	}
 
 	&:focus {

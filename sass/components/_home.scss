@@ -202,10 +202,10 @@ div.site {
 
   @media (min-width: $breakpoint_small) {
     left: -4rem;
-}
-@media (min-width: $breakpoint_medium) {
+  }
+  @media (min-width: $breakpoint_medium) {
     left: -8rem;
-}
+  }
 
   &-title {
     font-size: 3rem;
@@ -306,7 +306,7 @@ $animationSpeed: 40s;
   }
 }
 .swiper {
-  background-color: #15474768;
+  background-color: $light-green;
   margin: 0 !important;
 }
 blockquote {

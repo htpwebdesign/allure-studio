@@ -1,5 +1,4 @@
 .post-type-archive-product.theme-allure-studio {
-
   .site-main {
     margin-top: 2rem;
   }
@@ -11,10 +10,10 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    li {
+    li.product {
       margin: 1rem;
 
-      a {
+      a.woocommerce-LoopProduct-link {
         color: #000;
         text-decoration: none;
         text-align: center;
@@ -24,29 +23,34 @@
         img {
           margin: auto;
         }
+        .product-short-description span {
+          text-transform: initial;
+        }
       }
     }
   }
   @media (min-width: $breakpoint_medium) {
     ul.products {
-      li {
+      li.product {
         margin: 2rem 1%;
 
-        a {
+        a.woocommerce-LoopProduct-link {
           display: grid;
           grid-template-columns: 150px 1fr;
           grid-template-rows: repeat(3, min-content);
           justify-content: flex-start;
           text-align: left;
-          align-items:center;
+          align-items: center;
           gap: 1rem;
           row-gap: 0;
-          img{
-            margin:0%;
+          img {
+            margin: 0%;
             grid-column: 1/2;
             grid-row: 1/4;
           }
-          h2, div, span {
+          h2,
+          div,
+          span {
             grid-column: 2/3;
           }
           h2 {

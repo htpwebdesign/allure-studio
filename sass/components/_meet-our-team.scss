@@ -12,6 +12,9 @@
   }
   @media (min-width: $breakpoint_medium) {
     left: -8rem;
+    .banner-title {
+      font-size: 2.5rem;
+    }
   }
 
   &::after {
@@ -91,7 +94,7 @@
     padding: 0 0.5rem;
   }
   &-title {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 500;
     line-height: 50px;
     color: black;
@@ -100,7 +103,7 @@
   }
 
   &-text {
-    color: black;
+    color: #000000c2;
     font-size: 17px;
     line-height: 29px;
     font-weight: 300;
@@ -117,7 +120,7 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 50px;
-    color: black;
+    color: #000000c2;
     font-family: $font__main;
     margin-bottom: 2rem;
     text-align: left !important;

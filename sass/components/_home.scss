@@ -12,18 +12,13 @@
   padding: 0 1.5rem;
 }
 
-div.site {
-  @media (max-width: $breakpoint_small) {
-    margin-top: 10vh;
-  }
-}
-
 /* Hero Section */
 .hero-section {
   max-width: 100vw;
   width: 100vw;
   height: 100%;
-  // overflow-x: visible;
+  max-height: 90vh;
+  overflow: hidden;
   margin-bottom: 2rem;
   position: relative;
 

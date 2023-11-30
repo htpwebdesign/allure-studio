@@ -6,8 +6,21 @@
   display: none;
 }
 
+.wpcf7 {
+  max-width: 700px;
+}
+
 .contact-form {
   margin-top: 5rem;
+}
+
+.submit-button {
+  margin-bottom: 5rem;
+}
+
+.ac_title_class {
+  font-weight: 400;
+  text-transform: initial;
 }
 
 .office-hours {
@@ -39,10 +52,6 @@
 
 .wp-block-media-text__media img {
   margin-bottom: 3rem;
-}
-
-.submit-button {
-  margin-bottom: 5rem;
 }
 
 .wpgmza_map.wpgmza-auto-left {
@@ -84,6 +93,7 @@
 
   .wpsm_panel-group {
     margin-bottom: 10rem;
+    max-width: 700px;
   }
 
   .office-hours {

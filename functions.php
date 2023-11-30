@@ -164,6 +164,9 @@ function allure_studio_scripts()
 	// Enqueue lightGallery CSS file
 	wp_enqueue_style('lightGallery-style', get_template_directory_uri() . '/css/lightgallery-bundle.min.css', array(), _S_VERSION);	
 	
+	// Enqueue isotope script
+	wp_enqueue_script('isotope-script', get_template_directory_uri() . '/js/isotope/isotope.min.js', array(), _S_VERSION, true);
+	
 	// Enqueue our own script
 	wp_enqueue_script('allure-studio-main', get_template_directory_uri() . '/js/main.js', array('allure-studio-swiper'), _S_VERSION, true);
 }

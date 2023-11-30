@@ -34,10 +34,10 @@ get_header();
 			<!-- Filter navbar -->
 			<div class="gallery-filter">
 				<h3>Filter by category:</h3>
-				<ul class="gallery-filter_list">
-					<li>All</li>
+				<ul class="gallery-filter_list isotope-buttons">
+					<li data-filter="*">All</li>
 					<?php foreach ( $terms as $term ) :?>
-						<li><?php echo esc_html( $term->name );?></li>
+						<li data-filter=".<?php echo esc_html_e( $term->slug ); ?>"><?php echo esc_html( $term->name );?></li>
 					<?php endforeach;?>
 				</ul>
 			</div>
@@ -51,12 +51,14 @@ get_header();
 			$query = new WP_Query($args);
 
 			if ($query->have_posts()) {
-				echo '<div>';
+				echo '<div class="gallery-list__container">';
 				echo '<ul id="gallery-list" class="gallery-list">'; 
 				while ($query->have_posts()) {
 					$query->the_post();
+					$term_obj_list = get_the_terms( $post->ID, 'ast-gallery-categories' );
+					$terms_string = join(' .', wp_list_pluck($term_obj_list, 'slug'));
 					?>
-							<li class="gallery-thumbnail" data-src=<?php the_post_thumbnail_url( ); ?>>
+							<li class="gallery-thumbnail isotope-item <?php echo $terms_string; ?>" data-src=<?php the_post_thumbnail_url( ); ?>>
 								<?php the_post_thumbnail('medium'); ?>
 							</li>
 					<?php

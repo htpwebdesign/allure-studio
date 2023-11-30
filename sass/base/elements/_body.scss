@@ -10,7 +10,7 @@ div.site {
         padding: 0 4rem;
     }
     // Desktop
-    @media (min-width: $breakpoint_medium) {
+    @media (min-width: $breakpoint_large) {
         padding: 0 8rem;
     }
 }

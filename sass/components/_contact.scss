@@ -13,14 +13,14 @@
 .office-hours {
   display: flex;
   flex-direction: column;
-  justify-content:flex-start;
+  justify-content: flex-start;
   border: 1px solid $color__background-ins;
   margin-top: 0rem;
   margin-bottom: 0rem;
   background-color: $color__background-ins;
-} 
+}
 
-.office-hours-title{
+.office-hours-title {
   text-align: left;
   margin-left: 25%;
 }
@@ -38,30 +38,26 @@
 }
 
 .wp-block-media-text__media img {
-margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .submit-button {
   margin-bottom: 5rem;
 }
 
-.wpgmza_map.wpgmza-auto-left{
+.wpgmza_map.wpgmza-auto-left {
   margin-top: 5rem;
 }
 
-.footer-section{
-  margin-top: -2rem;
-  margin-bottom: -2rem;
-}
 @media (min-width: 524px) {
   .container {
     padding: 5px;
   }
 
-  .wp-block-media-text{
+  .wp-block-media-text {
     margin: 10rem 0;
   }
-  
+
   .contact-form {
     display: flex;
     flex-direction: column;
@@ -85,41 +81,41 @@ margin-bottom: 3rem;
       padding: 5px;
     }
   }
-  
-    .wpsm_panel-group{
-      margin-bottom: 10rem;
-    }
-  
-    .office-hours {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      border: 1px solid $color__background-ins;
-      margin-top: 3rem;
-      margin-bottom: 5rem;
-      background-color: $color__background-ins;
-    }
-  
-    .office-hours-title {
-      flex: 1;
-      margin-left: 3rem;
-    }
-  
-    .office-hours-details {
-      flex: 2;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin-top: 2rem;
-    }
-  
-    .office-hours-details h2 {
-      margin-bottom: 0;
-    }
-  
-    .hours,
-    .day {
-      padding: 5px;
-    }
+
+  .wpsm_panel-group {
+    margin-bottom: 10rem;
+  }
+
+  .office-hours {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid $color__background-ins;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    background-color: $color__background-ins;
+  }
+
+  .office-hours-title {
+    flex: 1;
+    margin-left: 3rem;
+  }
+
+  .office-hours-details {
+    flex: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  .office-hours-details h2 {
+    margin-bottom: 0;
+  }
+
+  .hours,
+  .day {
+    padding: 5px;
+  }
 }

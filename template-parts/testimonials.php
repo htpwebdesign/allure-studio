@@ -38,8 +38,8 @@
                 <?php endwhile; ?>
             </div>
             <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-buttons"><button class="swiper-button-prev"></button>
+            <button class="swiper-button-next"></button></div>
         </div>
     <?php
         wp_reset_postdata();

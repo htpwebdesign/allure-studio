@@ -46,19 +46,6 @@
   @media (min-width: $breakpoint_medium) {
     left: -8rem;
   }
-
-  &::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: black;
-    z-index: 2;
-    opacity: 0.4;
-  }
   &-text {
     position: absolute;
     left: 5%;
@@ -192,27 +179,36 @@
 ///// Brands Section
 .brands-section {
   margin-bottom: 2rem;
+  padding-top: 0.5rem;
   width: 100vw;
   position: relative;
 
-  @media (min-width: $breakpoint_small) {
-    left: -4rem;
-  }
-  @media (min-width: $breakpoint_medium) {
-    left: -8rem;
-  }
-
   &-title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
     line-height: 50px;
     color: black;
     font-family: $font__main;
-    margin: 7rem 0;
+    margin: 2rem 0;
     text-align: center;
   }
 }
 
+@media (min-width: $breakpoint_small) {
+  .brands-section {
+    left: -4rem;
+  }
+}
+
+@media (min-width: $breakpoint_medium) {
+  .brands-section {
+    left: -8rem;
+    &-title {
+      font-size: 3rem;
+      margin: 5rem 0;
+    }
+  }
+}
 @mixin white-gradient {
   background: linear-gradient(
     to right,
@@ -283,7 +279,7 @@ $animationSpeed: 40s;
 
 /* Instagram Section */
 .instagram-section {
-  margin-bottom: 10rem;
+  margin-bottom: 2rem;
 }
 
 /* Testimonials Section */
@@ -366,5 +362,9 @@ blockquote {
 
   .swiper-wrapper {
     margin-bottom: 1.5rem;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    background-color: $light-green;
   }
 }

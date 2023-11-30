@@ -2,6 +2,10 @@
     a {
         margin: 0 0.3rem;
         text-decoration: none;
+        color: $dark-green;
+        &:hover {
+            color: $light-orange;
+        }
     }
     span {
         font-weight: 700;

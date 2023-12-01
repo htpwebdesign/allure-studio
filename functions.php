@@ -256,6 +256,27 @@ function remove_dashboard_meta() {
     remove_meta_box('dashboard_activity', 'dashboard', 'normal');
 	remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');  // Recent Drafts
 	remove_meta_box('dashboard_quick_press', 'dashboard', 'side');  // Quick Press
+	remove_meta_box('wpseo_meta', 'post', 'normal');  // Quick Press
 }
 add_action('admin_init', 'remove_dashboard_meta');
+add_action('admin_menu', 'remove_dashboard_meta');
 add_action('wp_dashboard_setup', 'remove_dashboard_meta');
+
+add_action( 'add_meta_boxes', function() {
+    global $wp_meta_boxes;
+
+    $post_type = 'post';
+
+    // Get Yoast seo meta box.
+    $wpseo_metabox = $wp_meta_boxes[$post_type]['normal']['high']['wpseo_meta'];
+    unset( $wp_meta_boxes[$post_type]['normal']['high']['wpseo_meta'] );
+
+    // Move it to 'advanced' location with 'low' priority.
+    if ( empty( $wp_meta_boxes[$post_type]['advanced'] ) ) {
+        $wp_meta_boxes[$post_type]['advanced'] = [];
+    }
+    if ( empty( $wp_meta_boxes[$post_type]['advanced']['low'] ) ) {
+        $wp_meta_boxes[$post_type]['advanced']['low'] = [];
+    }
+    $wp_meta_boxes[$post_type]['advanced']['low']['slim-seo'] = $wpseo_metabox;
+}, 99 );

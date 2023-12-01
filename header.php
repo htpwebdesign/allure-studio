@@ -61,7 +61,6 @@
 				if(WC()->cart->get_cart_contents_count() > 0) {
 					allure_studio_woocommerce_header_cart();
 				}
-				allure_studio_woocommerce_header_cart();
 			}
 			?>
 	</header><!-- #masthead -->

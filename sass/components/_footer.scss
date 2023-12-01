@@ -10,14 +10,13 @@
   text-align: center;
   margin: 0 auto;
   font-size: 1rem;
-  right: -8rem;
-  left: -8rem;
-  position: relative;
   width: 100vw;
+  position: relative;
+
   @media (min-width: $breakpoint_small) {
     left: -4rem;
   }
-  @media (min-width: $breakpoint_medium) {
+  @media (min-width: $breakpoint_large) {
     left: -8rem;
   }
 

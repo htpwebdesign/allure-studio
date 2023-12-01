@@ -1,0 +1,21 @@
+.woocommerce-cart-form,
+.cart-collaterals{
+	margin: 2rem;
+}
+
+.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents{
+    border-spacing: 0 1rem;
+}
+
+.actions .coupon{
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.woocommerce-cart-form__cart-item.cart_item{
+    margin-bottom: 1rem;
+    td{
+        border: 1px solid $light-green;
+        padding: 1rem;
+    }
+}

@@ -193,7 +193,7 @@ if (!function_exists('allure_studio_woocommerce_cart_link')) {
 										<?php
 										$item_count_text = sprintf(
 											/* translators: number of items in the mini cart. */
-											_n('%d ', '%d ', WC()->cart->get_cart_contents_count(), 'allure-studio'),
+											_n('%d', '%d', WC()->cart->get_cart_contents_count(), 'allure-studio'),
 											WC()->cart->get_cart_contents_count()
 										);
 										?>

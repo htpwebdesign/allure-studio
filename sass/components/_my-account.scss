@@ -1,0 +1,37 @@
+.woocommerce-account .woocommerce {
+  max-width: 80rem;
+  width: 100%;
+  margin: 3rem auto;
+  padding: 1rem;
+  height: 45vh;
+}
+
+.woocommerce-account .entry-content {
+  text-align: left;
+}
+.woocommerce-MyAccount-navigation ul {
+  margin: 0;
+  padding-bottom: 3rem;
+}
+.woocommerce-MyAccount-navigation ul li a {
+  padding: 15px 0;
+  text-transform: initial;
+}
+.woocommerce-MyAccount-content {
+  width: 60%;
+}
+.woocommerce-account .woocommerce h2 {
+  padding: 2rem 0;
+  font-size: 2rem;
+}
+.woocommerce-account .woocommerce label {
+  display: block;
+  padding: 0.5rem 0;
+}
+.woocommerce-form-login__submit {
+  padding: 5px 40px;
+}
+.woocommerce-LostPassword a {
+  text-transform: lowercase;
+  font-size: 10px;
+}

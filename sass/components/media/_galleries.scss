@@ -1,3 +1,9 @@
+.post-type-archive-ast-gallery{
+    .page-title, .gallery-filter h3{
+        padding-left: 1rem;
+    }
+}
+
 .gallery {
     margin-bottom: 1.5em;
     display: grid;
@@ -39,7 +45,10 @@
         @include grid(4);
     }
     @media (min-width: $breakpoint_large) {
-        @include grid(6);
+        @include grid(5);
+    }
+    @media (min-width: $breakpoint_xl) {
+        @include grid(7);
     }
 
     li {

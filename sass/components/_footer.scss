@@ -31,10 +31,16 @@
   .footer-left a,
   p {
     color: #4a4745;
-    text-transform: lowercase;
+    text-transform: initial;
+    a {
+      text-decoration: none;
+    }
   }
   .faq {
     text-transform: uppercase;
+    a {
+      text-decoration: none;
+    }
   }
   .privacy-policy a {
     color: #4a4745;

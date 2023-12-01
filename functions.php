@@ -244,3 +244,18 @@ function my_login_logo_url() {
 	return home_url();
 }
 add_filter('login_headerurl', 'my_login_logo_url');
+
+// remove default dashboards outside of using screen options
+function remove_dashboard_meta() {
+    remove_meta_box('dashboard_primary', 'dashboard', 'normal'); //Removes the 'WordPress News' widget
+    remove_meta_box('dashboard_right_now', 'dashboard', 'normal'); //Removes the 'At a Glance' widget
+    remove_meta_box('wpseo-wincher-dashboard-overview', 'dashboard', 'normal'); //Removes wincher
+    remove_meta_box('wpseo-dashboard-overview', 'dashboard', 'normal'); //Removes yoast overview
+    remove_meta_box('wc_admin_dashboard_setup', 'dashboard', 'normal'); // Removes wc setup
+    remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+    remove_meta_box('dashboard_activity', 'dashboard', 'normal');
+	remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');  // Recent Drafts
+	remove_meta_box('dashboard_quick_press', 'dashboard', 'side');  // Quick Press
+}
+add_action('admin_init', 'remove_dashboard_meta');
+add_action('wp_dashboard_setup', 'remove_dashboard_meta');

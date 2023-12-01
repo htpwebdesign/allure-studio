@@ -1,6 +1,12 @@
 .container {
   padding: 0;
 }
+.contact {
+  max-width: 80rem;
+  width: 100%;
+  margin: 5rem auto;
+  padding: 0 1.5rem;
+}
 
 .entry-title {
   display: none;
@@ -24,30 +30,17 @@
 }
 
 .office-hours {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border: 1px solid $color__background-ins;
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-  background-color: $color__background-ins;
-}
-
-.office-hours-title {
-  text-align: left;
-  margin-left: 25%;
-}
-
-.office-hours-details {
-  flex: 2;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-}
-
-.office-hours-details h2 {
-  margin-bottom: 0;
+  max-width: 65rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: $transparent-orange;
+  &-title {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  &-details {
+    text-align: center;
+  }
 }
 
 .wp-block-media-text__media img {
@@ -94,38 +87,5 @@
   .wpsm_panel-group {
     margin-bottom: 10rem;
     max-width: 700px;
-  }
-
-  .office-hours {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: 1px solid $color__background-ins;
-    margin-top: 3rem;
-    margin-bottom: 5rem;
-    background-color: $color__background-ins;
-  }
-
-  .office-hours-title {
-    flex: 1;
-    margin-left: 3rem;
-  }
-
-  .office-hours-details {
-    flex: 2;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 2rem;
-  }
-
-  .office-hours-details h2 {
-    margin-bottom: 0;
-  }
-
-  .hours,
-  .day {
-    padding: 5px;
   }
 }

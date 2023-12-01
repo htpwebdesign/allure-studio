@@ -15,9 +15,13 @@
 			<div class="footer-left">
 			<?php $footer_info = get_field('footer_info', 'option'); ?>
 			<p> <?php echo $footer_info["address"]; ?></p>
-			<p> <?php echo $footer_info["email"]; ?></p>
-			<p> <?php echo $footer_info["phone_number"]; ?></p>
-			<p> <?php echo $footer_info["info_text"]; ?></p>	
+			<?php $footer_info = get_field('footer_info', 'option'); ?>
+			<p><a href="mailto:<?php echo $footer_info["email"]; ?>"><?php echo $footer_info["email"]; ?></a></p>
+            <p><a href="tel:<?php echo $footer_info["phone_number"]; ?>"><?php echo $footer_info["phone_number"]; ?></a></p>
+            <p><?php echo $footer_info["info_text"]; ?></p>	
+
+
+			
 		</div>	
 			<div class="footer-middle">
 				<span> &copy;	<?php esc_html_e('2023', 'allure-studio'); ?> </span>
@@ -27,7 +31,11 @@
 		<div class="footer-right">
 			 <?php $social_media_accounts = get_field('social_media', 'option'); ?>
 		
-				<p>FAQ</p>
+			<p class="faq">
+   
+    <a href="<?php echo get_permalink(102); ?>">FAQ</a>
+</p>
+
 				<p><?php if(isset($social_media_accounts["instagram_link"])) : ?>
 					<a href="<?php echo esc_url($social_media_accounts["instagram_link"]); ?>">
 						<svg width="30px" height="30px" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +43,7 @@
 						</svg>
 					</a>
 				</p>
-				<p>
+				<p class="privacy-policy">
 					<?php the_privacy_policy_link(); ?>
 						<a href="<?php echo get_permalink(3); ?>">Privacy Policy</a>
 				</p>

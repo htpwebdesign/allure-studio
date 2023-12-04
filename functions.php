@@ -227,33 +227,35 @@ add_filter('get_the_archive_title', function ($title) {
 // login logo change
 function my_login_logo()
 { ?>
-		<style type="text/css">
-		#login h1 a, .login h1 a {
-		background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/icons/allure-logo.svg);
-		height: 140px;
-		width: 140px;
-		background-size: 140px 140px;
-		background-repeat: no-repeat;
-		}
-		</style>
+							<style type="text/css">
+							#login h1 a, .login h1 a {
+							background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/icons/allure-logo.svg);
+							height: 140px;
+							width: 140px;
+							background-size: 140px 140px;
+							background-repeat: no-repeat;
+							}
+							</style>
    <?php }
 add_action('login_enqueue_scripts', 'my_login_logo');
 
 // login logo url
-function my_login_logo_url() {
+function my_login_logo_url()
+{
 	return home_url();
 }
 add_filter('login_headerurl', 'my_login_logo_url');
 
 // remove default dashboards outside of using screen options
-function remove_dashboard_meta() {
-    remove_meta_box('dashboard_primary', 'dashboard', 'normal'); //Removes the 'WordPress News' widget
-    remove_meta_box('dashboard_right_now', 'dashboard', 'normal'); //Removes the 'At a Glance' widget
-    remove_meta_box('wpseo-wincher-dashboard-overview', 'dashboard', 'normal'); //Removes wincher
-    remove_meta_box('wpseo-dashboard-overview', 'dashboard', 'normal'); //Removes yoast overview
-    remove_meta_box('wc_admin_dashboard_setup', 'dashboard', 'normal'); // Removes wc setup
-    remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
-    remove_meta_box('dashboard_activity', 'dashboard', 'normal');
+function remove_dashboard_meta()
+{
+	remove_meta_box('dashboard_primary', 'dashboard', 'normal'); //Removes the 'WordPress News' widget
+	remove_meta_box('dashboard_right_now', 'dashboard', 'normal'); //Removes the 'At a Glance' widget
+	remove_meta_box('wpseo-wincher-dashboard-overview', 'dashboard', 'normal'); //Removes wincher
+	remove_meta_box('wpseo-dashboard-overview', 'dashboard', 'normal'); //Removes yoast overview
+	remove_meta_box('wc_admin_dashboard_setup', 'dashboard', 'normal'); // Removes wc setup
+	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+	remove_meta_box('dashboard_activity', 'dashboard', 'normal');
 	remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');  // Recent Drafts
 	remove_meta_box('dashboard_quick_press', 'dashboard', 'side');  // Quick Press
 	remove_meta_box('wpseo_meta', 'post', 'normal');  // Quick Press
@@ -262,21 +264,38 @@ add_action('admin_init', 'remove_dashboard_meta');
 add_action('admin_menu', 'remove_dashboard_meta');
 add_action('wp_dashboard_setup', 'remove_dashboard_meta');
 
-add_action( 'add_meta_boxes', function() {
-    global $wp_meta_boxes;
+add_action('add_meta_boxes', function () {
+	global $wp_meta_boxes;
 
-    $post_type = 'post';
+	$post_type = 'post';
 
-    // Get Yoast seo meta box.
-    $wpseo_metabox = $wp_meta_boxes[$post_type]['normal']['high']['wpseo_meta'];
-    unset( $wp_meta_boxes[$post_type]['normal']['high']['wpseo_meta'] );
+	// Get Yoast seo meta box.
+	$wpseo_metabox = $wp_meta_boxes[$post_type]['normal']['high']['wpseo_meta'];
+	unset($wp_meta_boxes[$post_type]['normal']['high']['wpseo_meta']);
 
-    // Move it to 'advanced' location with 'low' priority.
-    if ( empty( $wp_meta_boxes[$post_type]['advanced'] ) ) {
-        $wp_meta_boxes[$post_type]['advanced'] = [];
-    }
-    if ( empty( $wp_meta_boxes[$post_type]['advanced']['low'] ) ) {
-        $wp_meta_boxes[$post_type]['advanced']['low'] = [];
-    }
-    $wp_meta_boxes[$post_type]['advanced']['low']['slim-seo'] = $wpseo_metabox;
-}, 99 );
+	// Move it to 'advanced' location with 'low' priority.
+	if (empty($wp_meta_boxes[$post_type]['advanced'])) {
+		$wp_meta_boxes[$post_type]['advanced'] = [];
+	}
+	if (empty($wp_meta_boxes[$post_type]['advanced']['low'])) {
+		$wp_meta_boxes[$post_type]['advanced']['low'] = [];
+	}
+	$wp_meta_boxes[$post_type]['advanced']['low']['slim-seo'] = $wpseo_metabox;
+}, 99);
+
+add_action('wp_dashboard_setup', 'my_custom_dashboard_widget');
+function my_custom_dashboard_widget()
+{
+	global $wp_meta_boxes;
+	wp_add_dashboard_widget('custom_widget', 'Tutorial', 'tutorial_widget');
+}
+
+function tutorial_widget()
+{
+	echo '<h2>Website Tutorial</h2>';
+	echo '<p>Please watch this video tutorial of important sections to notice in this admin area and how to make use of them.</p>';
+	echo '<video width="" height ="" controls>';
+	echo '<source src="' . get_template_directory_uri() . '/videos/client_tutorial.mp4" type="video/mp4">';
+	echo 'Your browser does not support the video tag.';
+	echo '</video>';
+}
